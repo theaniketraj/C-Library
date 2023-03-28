@@ -1,29 +1,20 @@
-#include <cs50.h>
-#include <stdio.h>
-
-void draw(int n);
-
-int main(void)
+#include<stdio.h>
+int factorial(int x);
+int main()
 {
-    int height = get_int("Height: ");
-
-    draw(height);
+    int a = 3;
+    printf("The value of factorial %d is %d", a, factorial(a));
+    return 0;
 }
 
-/// @brief 
-/// @param n 
-void draw(int n)
+int factorial(int x)
 {
-    if (n == 0)
+    if (x == 1 || x == 0)
     {
-        return;
+        return 1;
     }
-    
-    draw(n - 1);
-
-    for (int i = 0; i < n; i++)
+    else
     {
-        printf("#");
+        return x * factorial(x-1);
     }
-    printf("\n");
-}
+} 
